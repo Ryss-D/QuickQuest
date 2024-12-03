@@ -1,5 +1,8 @@
 {
     "helloWorld": "¡Hola Mundo!",
     "quickQuest": "quickQuest",
-    "invalidNavigation" : "Invalid Route"
+    "invalidNavigation" : "Invalid Route",
+    "completedTasks" : "Completed tasks",
+    "newTask" : "newTask",
+    "youHaveCompleteEverything" : "You have complete everything"
 }
