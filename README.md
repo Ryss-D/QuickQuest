@@ -7,3 +7,4 @@ If you want you can move over "Actions" tile and run the action Android Build QA
 Datasources logic -> Done
 State manager logic -> Done
 UI implementation -> In progress
+Testing for logic -> In PR
