@@ -15,6 +15,6 @@ void main() {
     await tester.pumpWidget(const QuickQuestApp());
 
     // Verify that placeholder is being render
-    expect(find.byType(Placeholder), findsOneWidget);
+    expect(find.byType(MaterialApp), findsOneWidget);
   });
 }
