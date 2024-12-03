@@ -16,9 +16,13 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Task {
+  @HiveField(0)
   String get id => throw _privateConstructorUsedError;
+  @HiveField(1)
   String get title => throw _privateConstructorUsedError;
+  @HiveField(2)
   String get body => throw _privateConstructorUsedError;
+  @HiveField(3)
   TaskStatus get status => throw _privateConstructorUsedError;
 
   /// Create a copy of Task
@@ -32,7 +36,11 @@ abstract class $TaskCopyWith<$Res> {
   factory $TaskCopyWith(Task value, $Res Function(Task) then) =
       _$TaskCopyWithImpl<$Res, Task>;
   @useResult
-  $Res call({String id, String title, String body, TaskStatus status});
+  $Res call(
+      {@HiveField(0) String id,
+      @HiveField(1) String title,
+      @HiveField(2) String body,
+      @HiveField(3) TaskStatus status});
 }
 
 /// @nodoc
@@ -83,7 +91,11 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
       __$$TaskImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, String body, TaskStatus status});
+  $Res call(
+      {@HiveField(0) String id,
+      @HiveField(1) String title,
+      @HiveField(2) String body,
+      @HiveField(3) TaskStatus status});
 }
 
 /// @nodoc
@@ -128,22 +140,26 @@ class __$$TaskImplCopyWithImpl<$Res>
 
 class _$TaskImpl implements _Task {
   const _$TaskImpl(
-      {this.id = '',
-      this.title = '',
-      this.body = '',
-      this.status = TaskStatus.pending});
+      {@HiveField(0) this.id = '',
+      @HiveField(1) this.title = '',
+      @HiveField(2) this.body = '',
+      @HiveField(3) this.status = TaskStatus.pending});
 
   @override
   @JsonKey()
+  @HiveField(0)
   final String id;
   @override
   @JsonKey()
+  @HiveField(1)
   final String title;
   @override
   @JsonKey()
+  @HiveField(2)
   final String body;
   @override
   @JsonKey()
+  @HiveField(3)
   final TaskStatus status;
 
   @override
@@ -176,18 +192,22 @@ class _$TaskImpl implements _Task {
 
 abstract class _Task implements Task {
   const factory _Task(
-      {final String id,
-      final String title,
-      final String body,
-      final TaskStatus status}) = _$TaskImpl;
+      {@HiveField(0) final String id,
+      @HiveField(1) final String title,
+      @HiveField(2) final String body,
+      @HiveField(3) final TaskStatus status}) = _$TaskImpl;
 
   @override
+  @HiveField(0)
   String get id;
   @override
+  @HiveField(1)
   String get title;
   @override
+  @HiveField(2)
   String get body;
   @override
+  @HiveField(3)
   TaskStatus get status;
 
   /// Create a copy of Task
