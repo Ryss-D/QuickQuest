@@ -20,7 +20,7 @@ mixin _$TasksListEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() loadTasks,
     required TResult Function(TaskStatus status) filterTasks,
-    required TResult Function(Task task) addTask,
+    required TResult Function(String title) addTask,
     required TResult Function(Task task) remove,
     required TResult Function(Task task) updateTask,
   }) =>
@@ -29,7 +29,7 @@ mixin _$TasksListEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadTasks,
     TResult? Function(TaskStatus status)? filterTasks,
-    TResult? Function(Task task)? addTask,
+    TResult? Function(String title)? addTask,
     TResult? Function(Task task)? remove,
     TResult? Function(Task task)? updateTask,
   }) =>
@@ -38,7 +38,7 @@ mixin _$TasksListEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadTasks,
     TResult Function(TaskStatus status)? filterTasks,
-    TResult Function(Task task)? addTask,
+    TResult Function(String title)? addTask,
     TResult Function(Task task)? remove,
     TResult Function(Task task)? updateTask,
     required TResult orElse(),
@@ -141,7 +141,7 @@ class _$TasksListEventLoadTasksImpl implements _TasksListEventLoadTasks {
   TResult when<TResult extends Object?>({
     required TResult Function() loadTasks,
     required TResult Function(TaskStatus status) filterTasks,
-    required TResult Function(Task task) addTask,
+    required TResult Function(String title) addTask,
     required TResult Function(Task task) remove,
     required TResult Function(Task task) updateTask,
   }) {
@@ -153,7 +153,7 @@ class _$TasksListEventLoadTasksImpl implements _TasksListEventLoadTasks {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadTasks,
     TResult? Function(TaskStatus status)? filterTasks,
-    TResult? Function(Task task)? addTask,
+    TResult? Function(String title)? addTask,
     TResult? Function(Task task)? remove,
     TResult? Function(Task task)? updateTask,
   }) {
@@ -165,7 +165,7 @@ class _$TasksListEventLoadTasksImpl implements _TasksListEventLoadTasks {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadTasks,
     TResult Function(TaskStatus status)? filterTasks,
-    TResult Function(Task task)? addTask,
+    TResult Function(String title)? addTask,
     TResult Function(Task task)? remove,
     TResult Function(Task task)? updateTask,
     required TResult orElse(),
@@ -294,7 +294,7 @@ class _$TasksListEventFilterTasksImpl implements _TasksListEventFilterTasks {
   TResult when<TResult extends Object?>({
     required TResult Function() loadTasks,
     required TResult Function(TaskStatus status) filterTasks,
-    required TResult Function(Task task) addTask,
+    required TResult Function(String title) addTask,
     required TResult Function(Task task) remove,
     required TResult Function(Task task) updateTask,
   }) {
@@ -306,7 +306,7 @@ class _$TasksListEventFilterTasksImpl implements _TasksListEventFilterTasks {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadTasks,
     TResult? Function(TaskStatus status)? filterTasks,
-    TResult? Function(Task task)? addTask,
+    TResult? Function(String title)? addTask,
     TResult? Function(Task task)? remove,
     TResult? Function(Task task)? updateTask,
   }) {
@@ -318,7 +318,7 @@ class _$TasksListEventFilterTasksImpl implements _TasksListEventFilterTasks {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadTasks,
     TResult Function(TaskStatus status)? filterTasks,
-    TResult Function(Task task)? addTask,
+    TResult Function(String title)? addTask,
     TResult Function(Task task)? remove,
     TResult Function(Task task)? updateTask,
     required TResult orElse(),
@@ -390,9 +390,7 @@ abstract class _$$TasksListEventAddTaskImplCopyWith<$Res> {
           $Res Function(_$TasksListEventAddTaskImpl) then) =
       __$$TasksListEventAddTaskImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Task task});
-
-  $TaskCopyWith<$Res> get task;
+  $Res call({String title});
 }
 
 /// @nodoc
@@ -408,38 +406,28 @@ class __$$TasksListEventAddTaskImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? task = null,
+    Object? title = null,
   }) {
     return _then(_$TasksListEventAddTaskImpl(
-      null == task
-          ? _value.task
-          : task // ignore: cast_nullable_to_non_nullable
-              as Task,
+      null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
-  }
-
-  /// Create a copy of TasksListEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $TaskCopyWith<$Res> get task {
-    return $TaskCopyWith<$Res>(_value.task, (value) {
-      return _then(_value.copyWith(task: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$TasksListEventAddTaskImpl implements _TasksListEventAddTask {
-  const _$TasksListEventAddTaskImpl(this.task);
+  const _$TasksListEventAddTaskImpl(this.title);
 
   @override
-  final Task task;
+  final String title;
 
   @override
   String toString() {
-    return 'TasksListEvent.addTask(task: $task)';
+    return 'TasksListEvent.addTask(title: $title)';
   }
 
   @override
@@ -447,11 +435,11 @@ class _$TasksListEventAddTaskImpl implements _TasksListEventAddTask {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TasksListEventAddTaskImpl &&
-            (identical(other.task, task) || other.task == task));
+            (identical(other.title, title) || other.title == title));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, task);
+  int get hashCode => Object.hash(runtimeType, title);
 
   /// Create a copy of TasksListEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -467,11 +455,11 @@ class _$TasksListEventAddTaskImpl implements _TasksListEventAddTask {
   TResult when<TResult extends Object?>({
     required TResult Function() loadTasks,
     required TResult Function(TaskStatus status) filterTasks,
-    required TResult Function(Task task) addTask,
+    required TResult Function(String title) addTask,
     required TResult Function(Task task) remove,
     required TResult Function(Task task) updateTask,
   }) {
-    return addTask(task);
+    return addTask(title);
   }
 
   @override
@@ -479,11 +467,11 @@ class _$TasksListEventAddTaskImpl implements _TasksListEventAddTask {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadTasks,
     TResult? Function(TaskStatus status)? filterTasks,
-    TResult? Function(Task task)? addTask,
+    TResult? Function(String title)? addTask,
     TResult? Function(Task task)? remove,
     TResult? Function(Task task)? updateTask,
   }) {
-    return addTask?.call(task);
+    return addTask?.call(title);
   }
 
   @override
@@ -491,13 +479,13 @@ class _$TasksListEventAddTaskImpl implements _TasksListEventAddTask {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadTasks,
     TResult Function(TaskStatus status)? filterTasks,
-    TResult Function(Task task)? addTask,
+    TResult Function(String title)? addTask,
     TResult Function(Task task)? remove,
     TResult Function(Task task)? updateTask,
     required TResult orElse(),
   }) {
     if (addTask != null) {
-      return addTask(task);
+      return addTask(title);
     }
     return orElse();
   }
@@ -544,10 +532,10 @@ class _$TasksListEventAddTaskImpl implements _TasksListEventAddTask {
 }
 
 abstract class _TasksListEventAddTask implements TasksListEvent {
-  const factory _TasksListEventAddTask(final Task task) =
+  const factory _TasksListEventAddTask(final String title) =
       _$TasksListEventAddTaskImpl;
 
-  Task get task;
+  String get title;
 
   /// Create a copy of TasksListEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -641,7 +629,7 @@ class _$TasksListEventRemoveTaskImpl implements _TasksListEventRemoveTask {
   TResult when<TResult extends Object?>({
     required TResult Function() loadTasks,
     required TResult Function(TaskStatus status) filterTasks,
-    required TResult Function(Task task) addTask,
+    required TResult Function(String title) addTask,
     required TResult Function(Task task) remove,
     required TResult Function(Task task) updateTask,
   }) {
@@ -653,7 +641,7 @@ class _$TasksListEventRemoveTaskImpl implements _TasksListEventRemoveTask {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadTasks,
     TResult? Function(TaskStatus status)? filterTasks,
-    TResult? Function(Task task)? addTask,
+    TResult? Function(String title)? addTask,
     TResult? Function(Task task)? remove,
     TResult? Function(Task task)? updateTask,
   }) {
@@ -665,7 +653,7 @@ class _$TasksListEventRemoveTaskImpl implements _TasksListEventRemoveTask {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadTasks,
     TResult Function(TaskStatus status)? filterTasks,
-    TResult Function(Task task)? addTask,
+    TResult Function(String title)? addTask,
     TResult Function(Task task)? remove,
     TResult Function(Task task)? updateTask,
     required TResult orElse(),
@@ -815,7 +803,7 @@ class _$TasksListEventUpdateTaskImpl implements _TasksListEventUpdateTask {
   TResult when<TResult extends Object?>({
     required TResult Function() loadTasks,
     required TResult Function(TaskStatus status) filterTasks,
-    required TResult Function(Task task) addTask,
+    required TResult Function(String title) addTask,
     required TResult Function(Task task) remove,
     required TResult Function(Task task) updateTask,
   }) {
@@ -827,7 +815,7 @@ class _$TasksListEventUpdateTaskImpl implements _TasksListEventUpdateTask {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadTasks,
     TResult? Function(TaskStatus status)? filterTasks,
-    TResult? Function(Task task)? addTask,
+    TResult? Function(String title)? addTask,
     TResult? Function(Task task)? remove,
     TResult? Function(Task task)? updateTask,
   }) {
@@ -839,7 +827,7 @@ class _$TasksListEventUpdateTaskImpl implements _TasksListEventUpdateTask {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadTasks,
     TResult Function(TaskStatus status)? filterTasks,
-    TResult Function(Task task)? addTask,
+    TResult Function(String title)? addTask,
     TResult Function(Task task)? remove,
     TResult Function(Task task)? updateTask,
     required TResult orElse(),

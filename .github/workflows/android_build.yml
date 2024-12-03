@@ -1,4 +1,4 @@
-name: "Android Build QA"
+name: "Android Build"
 on:
     workflow_dispatch:
         # inputs:

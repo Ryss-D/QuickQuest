@@ -37,7 +37,7 @@ class TasksListBloc extends Bloc<TasksListEvent, TasksListState> {
 //TODO: Consider optimistic UI to avoid refetching tasks every operation
   void _onAddTask(
       _TasksListEventAddTask event, Emitter<TasksListState> emit) async {
-    await tasksListRepository.addTask(event.task);
+    await tasksListRepository.addTask(Task(title: event.title));
     add(const TasksListEvent.loadTasks());
   }
 

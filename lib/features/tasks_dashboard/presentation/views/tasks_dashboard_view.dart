@@ -16,6 +16,7 @@ class TasksDashboardView extends StatelessWidget {
         buildWhen: (previous, current) {
       return previous.tasks.isEmpty != current.tasks.isEmpty;
     }, builder: (context, state) {
+      context.read<TasksListBloc>().add(const TasksListEvent.loadTasks());
       final isEmpty = state.tasks.isEmpty;
       return Scaffold(
         body: Center(
