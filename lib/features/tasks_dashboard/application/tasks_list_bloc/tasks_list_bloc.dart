@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quick_quest/core/data/task_status.dart';
 import 'package:quick_quest/features/tasks_dashboard/data/models/task.dart';
 import 'package:quick_quest/features/tasks_dashboard/data/repositories/tasks_list_repository.dart';
 
@@ -10,6 +11,7 @@ part 'tasks_list_bloc.freezed.dart';
 class TasksListBloc extends Bloc<TasksListEvent, TasksListState> {
   TasksListBloc() : super(const TasksListState()) {
     on<_TasksListEventLoadTasks>(_onLoadTasks);
+    on<_TasksListEventFilterTasks>(_onFilterTasks);
     on<_TasksListEventAddTask>(_onAddTask);
     on<_TasksListEventRemoveTask>(_onRemoveTask);
     on<_TasksListEventUpdateTask>(_onUpdateTask);
@@ -20,6 +22,13 @@ class TasksListBloc extends Bloc<TasksListEvent, TasksListState> {
   void _onLoadTasks(
       _TasksListEventLoadTasks event, Emitter<TasksListState> emit) async {
     final tasks = await tasksListRepository.getAllTasks();
+    emit(
+      state.copyWith(tasks: tasks),
+    );
+  }
+  void _onFilterTasks(
+      _TasksListEventFilterTasks event, Emitter<TasksListState> emit) async {
+    final tasks = await tasksListRepository.getTasksByStatus(event.status);
     emit(
       state.copyWith(tasks: tasks),
     );

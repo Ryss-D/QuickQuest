@@ -1,1 +1,1 @@
-export 'package:quick_quest/features/tasks_dashboard/presentation/views/tasks_list_view.dart';
+export 'package:quick_quest/features/tasks_dashboard/presentation/views/tasks_dashboard_view.dart';
