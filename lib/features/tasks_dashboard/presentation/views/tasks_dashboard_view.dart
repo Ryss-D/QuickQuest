@@ -25,7 +25,10 @@ class TasksDashboardView extends StatelessWidget {
               child: isEmpty
                   ? const NoTasksCallToAction()
                   : const Column(
-                      children: [TasksInteractions(), TasksList()],
+                      children: [
+                        TasksInteractions(),
+                        TasksList(),
+                      ],
                     )),
         ),
       );
