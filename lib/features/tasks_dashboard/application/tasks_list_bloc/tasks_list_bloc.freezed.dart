@@ -19,32 +19,50 @@ mixin _$TasksListEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadTasks,
+    required TResult Function(Task task) addTask,
+    required TResult Function(Task task) remove,
+    required TResult Function(Task task) updateTask,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadTasks,
+    TResult? Function(Task task)? addTask,
+    TResult? Function(Task task)? remove,
+    TResult? Function(Task task)? updateTask,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadTasks,
+    TResult Function(Task task)? addTask,
+    TResult Function(Task task)? remove,
+    TResult Function(Task task)? updateTask,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(TasksListEventLoadTasks value) loadTasks,
+    required TResult Function(_TasksListEventLoadTasks value) loadTasks,
+    required TResult Function(_TasksListEventAddTask value) addTask,
+    required TResult Function(_TasksListEventRemoveTask value) remove,
+    required TResult Function(_TasksListEventUpdateTask value) updateTask,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TasksListEventLoadTasks value)? loadTasks,
+    TResult? Function(_TasksListEventLoadTasks value)? loadTasks,
+    TResult? Function(_TasksListEventAddTask value)? addTask,
+    TResult? Function(_TasksListEventRemoveTask value)? remove,
+    TResult? Function(_TasksListEventUpdateTask value)? updateTask,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(TasksListEventLoadTasks value)? loadTasks,
+    TResult Function(_TasksListEventLoadTasks value)? loadTasks,
+    TResult Function(_TasksListEventAddTask value)? addTask,
+    TResult Function(_TasksListEventRemoveTask value)? remove,
+    TResult Function(_TasksListEventUpdateTask value)? updateTask,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -94,7 +112,7 @@ class __$$TasksListEventLoadTasksImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TasksListEventLoadTasksImpl implements TasksListEventLoadTasks {
+class _$TasksListEventLoadTasksImpl implements _TasksListEventLoadTasks {
   const _$TasksListEventLoadTasksImpl();
 
   @override
@@ -116,6 +134,9 @@ class _$TasksListEventLoadTasksImpl implements TasksListEventLoadTasks {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadTasks,
+    required TResult Function(Task task) addTask,
+    required TResult Function(Task task) remove,
+    required TResult Function(Task task) updateTask,
   }) {
     return loadTasks();
   }
@@ -124,6 +145,9 @@ class _$TasksListEventLoadTasksImpl implements TasksListEventLoadTasks {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadTasks,
+    TResult? Function(Task task)? addTask,
+    TResult? Function(Task task)? remove,
+    TResult? Function(Task task)? updateTask,
   }) {
     return loadTasks?.call();
   }
@@ -132,6 +156,9 @@ class _$TasksListEventLoadTasksImpl implements TasksListEventLoadTasks {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadTasks,
+    TResult Function(Task task)? addTask,
+    TResult Function(Task task)? remove,
+    TResult Function(Task task)? updateTask,
     required TResult orElse(),
   }) {
     if (loadTasks != null) {
@@ -143,7 +170,10 @@ class _$TasksListEventLoadTasksImpl implements TasksListEventLoadTasks {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(TasksListEventLoadTasks value) loadTasks,
+    required TResult Function(_TasksListEventLoadTasks value) loadTasks,
+    required TResult Function(_TasksListEventAddTask value) addTask,
+    required TResult Function(_TasksListEventRemoveTask value) remove,
+    required TResult Function(_TasksListEventUpdateTask value) updateTask,
   }) {
     return loadTasks(this);
   }
@@ -151,7 +181,10 @@ class _$TasksListEventLoadTasksImpl implements TasksListEventLoadTasks {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TasksListEventLoadTasks value)? loadTasks,
+    TResult? Function(_TasksListEventLoadTasks value)? loadTasks,
+    TResult? Function(_TasksListEventAddTask value)? addTask,
+    TResult? Function(_TasksListEventRemoveTask value)? remove,
+    TResult? Function(_TasksListEventUpdateTask value)? updateTask,
   }) {
     return loadTasks?.call(this);
   }
@@ -159,7 +192,10 @@ class _$TasksListEventLoadTasksImpl implements TasksListEventLoadTasks {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(TasksListEventLoadTasks value)? loadTasks,
+    TResult Function(_TasksListEventLoadTasks value)? loadTasks,
+    TResult Function(_TasksListEventAddTask value)? addTask,
+    TResult Function(_TasksListEventRemoveTask value)? remove,
+    TResult Function(_TasksListEventUpdateTask value)? updateTask,
     required TResult orElse(),
   }) {
     if (loadTasks != null) {
@@ -169,8 +205,511 @@ class _$TasksListEventLoadTasksImpl implements TasksListEventLoadTasks {
   }
 }
 
-abstract class TasksListEventLoadTasks implements TasksListEvent {
-  const factory TasksListEventLoadTasks() = _$TasksListEventLoadTasksImpl;
+abstract class _TasksListEventLoadTasks implements TasksListEvent {
+  const factory _TasksListEventLoadTasks() = _$TasksListEventLoadTasksImpl;
+}
+
+/// @nodoc
+abstract class _$$TasksListEventAddTaskImplCopyWith<$Res> {
+  factory _$$TasksListEventAddTaskImplCopyWith(
+          _$TasksListEventAddTaskImpl value,
+          $Res Function(_$TasksListEventAddTaskImpl) then) =
+      __$$TasksListEventAddTaskImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Task task});
+
+  $TaskCopyWith<$Res> get task;
+}
+
+/// @nodoc
+class __$$TasksListEventAddTaskImplCopyWithImpl<$Res>
+    extends _$TasksListEventCopyWithImpl<$Res, _$TasksListEventAddTaskImpl>
+    implements _$$TasksListEventAddTaskImplCopyWith<$Res> {
+  __$$TasksListEventAddTaskImplCopyWithImpl(_$TasksListEventAddTaskImpl _value,
+      $Res Function(_$TasksListEventAddTaskImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? task = null,
+  }) {
+    return _then(_$TasksListEventAddTaskImpl(
+      null == task
+          ? _value.task
+          : task // ignore: cast_nullable_to_non_nullable
+              as Task,
+    ));
+  }
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TaskCopyWith<$Res> get task {
+    return $TaskCopyWith<$Res>(_value.task, (value) {
+      return _then(_value.copyWith(task: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$TasksListEventAddTaskImpl implements _TasksListEventAddTask {
+  const _$TasksListEventAddTaskImpl(this.task);
+
+  @override
+  final Task task;
+
+  @override
+  String toString() {
+    return 'TasksListEvent.addTask(task: $task)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TasksListEventAddTaskImpl &&
+            (identical(other.task, task) || other.task == task));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, task);
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TasksListEventAddTaskImplCopyWith<_$TasksListEventAddTaskImpl>
+      get copyWith => __$$TasksListEventAddTaskImplCopyWithImpl<
+          _$TasksListEventAddTaskImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadTasks,
+    required TResult Function(Task task) addTask,
+    required TResult Function(Task task) remove,
+    required TResult Function(Task task) updateTask,
+  }) {
+    return addTask(task);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadTasks,
+    TResult? Function(Task task)? addTask,
+    TResult? Function(Task task)? remove,
+    TResult? Function(Task task)? updateTask,
+  }) {
+    return addTask?.call(task);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadTasks,
+    TResult Function(Task task)? addTask,
+    TResult Function(Task task)? remove,
+    TResult Function(Task task)? updateTask,
+    required TResult orElse(),
+  }) {
+    if (addTask != null) {
+      return addTask(task);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TasksListEventLoadTasks value) loadTasks,
+    required TResult Function(_TasksListEventAddTask value) addTask,
+    required TResult Function(_TasksListEventRemoveTask value) remove,
+    required TResult Function(_TasksListEventUpdateTask value) updateTask,
+  }) {
+    return addTask(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TasksListEventLoadTasks value)? loadTasks,
+    TResult? Function(_TasksListEventAddTask value)? addTask,
+    TResult? Function(_TasksListEventRemoveTask value)? remove,
+    TResult? Function(_TasksListEventUpdateTask value)? updateTask,
+  }) {
+    return addTask?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TasksListEventLoadTasks value)? loadTasks,
+    TResult Function(_TasksListEventAddTask value)? addTask,
+    TResult Function(_TasksListEventRemoveTask value)? remove,
+    TResult Function(_TasksListEventUpdateTask value)? updateTask,
+    required TResult orElse(),
+  }) {
+    if (addTask != null) {
+      return addTask(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TasksListEventAddTask implements TasksListEvent {
+  const factory _TasksListEventAddTask(final Task task) =
+      _$TasksListEventAddTaskImpl;
+
+  Task get task;
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TasksListEventAddTaskImplCopyWith<_$TasksListEventAddTaskImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TasksListEventRemoveTaskImplCopyWith<$Res> {
+  factory _$$TasksListEventRemoveTaskImplCopyWith(
+          _$TasksListEventRemoveTaskImpl value,
+          $Res Function(_$TasksListEventRemoveTaskImpl) then) =
+      __$$TasksListEventRemoveTaskImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Task task});
+
+  $TaskCopyWith<$Res> get task;
+}
+
+/// @nodoc
+class __$$TasksListEventRemoveTaskImplCopyWithImpl<$Res>
+    extends _$TasksListEventCopyWithImpl<$Res, _$TasksListEventRemoveTaskImpl>
+    implements _$$TasksListEventRemoveTaskImplCopyWith<$Res> {
+  __$$TasksListEventRemoveTaskImplCopyWithImpl(
+      _$TasksListEventRemoveTaskImpl _value,
+      $Res Function(_$TasksListEventRemoveTaskImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? task = null,
+  }) {
+    return _then(_$TasksListEventRemoveTaskImpl(
+      null == task
+          ? _value.task
+          : task // ignore: cast_nullable_to_non_nullable
+              as Task,
+    ));
+  }
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TaskCopyWith<$Res> get task {
+    return $TaskCopyWith<$Res>(_value.task, (value) {
+      return _then(_value.copyWith(task: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$TasksListEventRemoveTaskImpl implements _TasksListEventRemoveTask {
+  const _$TasksListEventRemoveTaskImpl(this.task);
+
+  @override
+  final Task task;
+
+  @override
+  String toString() {
+    return 'TasksListEvent.remove(task: $task)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TasksListEventRemoveTaskImpl &&
+            (identical(other.task, task) || other.task == task));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, task);
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TasksListEventRemoveTaskImplCopyWith<_$TasksListEventRemoveTaskImpl>
+      get copyWith => __$$TasksListEventRemoveTaskImplCopyWithImpl<
+          _$TasksListEventRemoveTaskImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadTasks,
+    required TResult Function(Task task) addTask,
+    required TResult Function(Task task) remove,
+    required TResult Function(Task task) updateTask,
+  }) {
+    return remove(task);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadTasks,
+    TResult? Function(Task task)? addTask,
+    TResult? Function(Task task)? remove,
+    TResult? Function(Task task)? updateTask,
+  }) {
+    return remove?.call(task);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadTasks,
+    TResult Function(Task task)? addTask,
+    TResult Function(Task task)? remove,
+    TResult Function(Task task)? updateTask,
+    required TResult orElse(),
+  }) {
+    if (remove != null) {
+      return remove(task);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TasksListEventLoadTasks value) loadTasks,
+    required TResult Function(_TasksListEventAddTask value) addTask,
+    required TResult Function(_TasksListEventRemoveTask value) remove,
+    required TResult Function(_TasksListEventUpdateTask value) updateTask,
+  }) {
+    return remove(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TasksListEventLoadTasks value)? loadTasks,
+    TResult? Function(_TasksListEventAddTask value)? addTask,
+    TResult? Function(_TasksListEventRemoveTask value)? remove,
+    TResult? Function(_TasksListEventUpdateTask value)? updateTask,
+  }) {
+    return remove?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TasksListEventLoadTasks value)? loadTasks,
+    TResult Function(_TasksListEventAddTask value)? addTask,
+    TResult Function(_TasksListEventRemoveTask value)? remove,
+    TResult Function(_TasksListEventUpdateTask value)? updateTask,
+    required TResult orElse(),
+  }) {
+    if (remove != null) {
+      return remove(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TasksListEventRemoveTask implements TasksListEvent {
+  const factory _TasksListEventRemoveTask(final Task task) =
+      _$TasksListEventRemoveTaskImpl;
+
+  Task get task;
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TasksListEventRemoveTaskImplCopyWith<_$TasksListEventRemoveTaskImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TasksListEventUpdateTaskImplCopyWith<$Res> {
+  factory _$$TasksListEventUpdateTaskImplCopyWith(
+          _$TasksListEventUpdateTaskImpl value,
+          $Res Function(_$TasksListEventUpdateTaskImpl) then) =
+      __$$TasksListEventUpdateTaskImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Task task});
+
+  $TaskCopyWith<$Res> get task;
+}
+
+/// @nodoc
+class __$$TasksListEventUpdateTaskImplCopyWithImpl<$Res>
+    extends _$TasksListEventCopyWithImpl<$Res, _$TasksListEventUpdateTaskImpl>
+    implements _$$TasksListEventUpdateTaskImplCopyWith<$Res> {
+  __$$TasksListEventUpdateTaskImplCopyWithImpl(
+      _$TasksListEventUpdateTaskImpl _value,
+      $Res Function(_$TasksListEventUpdateTaskImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? task = null,
+  }) {
+    return _then(_$TasksListEventUpdateTaskImpl(
+      null == task
+          ? _value.task
+          : task // ignore: cast_nullable_to_non_nullable
+              as Task,
+    ));
+  }
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TaskCopyWith<$Res> get task {
+    return $TaskCopyWith<$Res>(_value.task, (value) {
+      return _then(_value.copyWith(task: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$TasksListEventUpdateTaskImpl implements _TasksListEventUpdateTask {
+  const _$TasksListEventUpdateTaskImpl(this.task);
+
+  @override
+  final Task task;
+
+  @override
+  String toString() {
+    return 'TasksListEvent.updateTask(task: $task)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TasksListEventUpdateTaskImpl &&
+            (identical(other.task, task) || other.task == task));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, task);
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TasksListEventUpdateTaskImplCopyWith<_$TasksListEventUpdateTaskImpl>
+      get copyWith => __$$TasksListEventUpdateTaskImplCopyWithImpl<
+          _$TasksListEventUpdateTaskImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadTasks,
+    required TResult Function(Task task) addTask,
+    required TResult Function(Task task) remove,
+    required TResult Function(Task task) updateTask,
+  }) {
+    return updateTask(task);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadTasks,
+    TResult? Function(Task task)? addTask,
+    TResult? Function(Task task)? remove,
+    TResult? Function(Task task)? updateTask,
+  }) {
+    return updateTask?.call(task);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadTasks,
+    TResult Function(Task task)? addTask,
+    TResult Function(Task task)? remove,
+    TResult Function(Task task)? updateTask,
+    required TResult orElse(),
+  }) {
+    if (updateTask != null) {
+      return updateTask(task);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TasksListEventLoadTasks value) loadTasks,
+    required TResult Function(_TasksListEventAddTask value) addTask,
+    required TResult Function(_TasksListEventRemoveTask value) remove,
+    required TResult Function(_TasksListEventUpdateTask value) updateTask,
+  }) {
+    return updateTask(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TasksListEventLoadTasks value)? loadTasks,
+    TResult? Function(_TasksListEventAddTask value)? addTask,
+    TResult? Function(_TasksListEventRemoveTask value)? remove,
+    TResult? Function(_TasksListEventUpdateTask value)? updateTask,
+  }) {
+    return updateTask?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TasksListEventLoadTasks value)? loadTasks,
+    TResult Function(_TasksListEventAddTask value)? addTask,
+    TResult Function(_TasksListEventRemoveTask value)? remove,
+    TResult Function(_TasksListEventUpdateTask value)? updateTask,
+    required TResult orElse(),
+  }) {
+    if (updateTask != null) {
+      return updateTask(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TasksListEventUpdateTask implements TasksListEvent {
+  const factory _TasksListEventUpdateTask(final Task task) =
+      _$TasksListEventUpdateTaskImpl;
+
+  Task get task;
+
+  /// Create a copy of TasksListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TasksListEventUpdateTaskImplCopyWith<_$TasksListEventUpdateTaskImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

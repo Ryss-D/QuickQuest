@@ -9,12 +9,10 @@ part 'task.freezed.dart';
 class Task  with _$Task{
   const factory Task({
     @HiveField(0)
-    @Default('') String id,
+    @Default(null) int? id,
     @HiveField(1)
      @Default('') String title,
     @HiveField(2)
-     @Default('') String body,
-    @HiveField(3)
      @Default(TaskStatus.pending) TaskStatus status, 
   })= _Task;
 }

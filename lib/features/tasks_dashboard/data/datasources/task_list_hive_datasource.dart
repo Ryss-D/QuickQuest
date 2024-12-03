@@ -1,7 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:quick_quest/features/tasks_dashboard/data/models/task.dart';
 
-class TodoService {
+class TasksListHiveDatasource{
   final String _boxName = "taskBox";
 
   Future<Box<Task>> get _box async => await Hive.openBox<Task>(_boxName);

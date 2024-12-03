@@ -18,33 +18,46 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TaskEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() saveTask,
+    required TResult Function() toogleTaskStatus,
+    required TResult Function() updateTitle,
+    required TResult Function() taskSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? saveTask,
+    TResult? Function()? toogleTaskStatus,
+    TResult? Function()? updateTitle,
+    TResult? Function()? taskSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? saveTask,
+    TResult Function()? toogleTaskStatus,
+    TResult Function()? updateTitle,
+    TResult Function()? taskSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_TaskEventSaveTask value) saveTask,
+    required TResult Function(_TaskEventToogleTaskStatus value)
+        toogleTaskStatus,
+    required TResult Function(_TaskEventUpdateTitle value) updateTitle,
+    required TResult Function(_TaskEventTaskSelected value) taskSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_TaskEventSaveTask value)? saveTask,
+    TResult? Function(_TaskEventToogleTaskStatus value)? toogleTaskStatus,
+    TResult? Function(_TaskEventUpdateTitle value)? updateTitle,
+    TResult? Function(_TaskEventTaskSelected value)? taskSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_TaskEventSaveTask value)? saveTask,
+    TResult Function(_TaskEventToogleTaskStatus value)? toogleTaskStatus,
+    TResult Function(_TaskEventUpdateTitle value)? updateTitle,
+    TResult Function(_TaskEventTaskSelected value)? taskSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,18 +84,20 @@ class _$TaskEventCopyWithImpl<$Res, $Val extends TaskEvent>
 }
 
 /// @nodoc
-abstract class _$$TaskEventSaveTaskImplCopyWith<$Res> {
-  factory _$$TaskEventSaveTaskImplCopyWith(_$TaskEventSaveTaskImpl value,
-          $Res Function(_$TaskEventSaveTaskImpl) then) =
-      __$$TaskEventSaveTaskImplCopyWithImpl<$Res>;
+abstract class _$$TaskEventToogleTaskStatusImplCopyWith<$Res> {
+  factory _$$TaskEventToogleTaskStatusImplCopyWith(
+          _$TaskEventToogleTaskStatusImpl value,
+          $Res Function(_$TaskEventToogleTaskStatusImpl) then) =
+      __$$TaskEventToogleTaskStatusImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TaskEventSaveTaskImplCopyWithImpl<$Res>
-    extends _$TaskEventCopyWithImpl<$Res, _$TaskEventSaveTaskImpl>
-    implements _$$TaskEventSaveTaskImplCopyWith<$Res> {
-  __$$TaskEventSaveTaskImplCopyWithImpl(_$TaskEventSaveTaskImpl _value,
-      $Res Function(_$TaskEventSaveTaskImpl) _then)
+class __$$TaskEventToogleTaskStatusImplCopyWithImpl<$Res>
+    extends _$TaskEventCopyWithImpl<$Res, _$TaskEventToogleTaskStatusImpl>
+    implements _$$TaskEventToogleTaskStatusImplCopyWith<$Res> {
+  __$$TaskEventToogleTaskStatusImplCopyWithImpl(
+      _$TaskEventToogleTaskStatusImpl _value,
+      $Res Function(_$TaskEventToogleTaskStatusImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of TaskEvent
@@ -91,18 +106,19 @@ class __$$TaskEventSaveTaskImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TaskEventSaveTaskImpl implements _TaskEventSaveTask {
-  const _$TaskEventSaveTaskImpl();
+class _$TaskEventToogleTaskStatusImpl implements _TaskEventToogleTaskStatus {
+  const _$TaskEventToogleTaskStatusImpl();
 
   @override
   String toString() {
-    return 'TaskEvent.saveTask()';
+    return 'TaskEvent.toogleTaskStatus()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TaskEventSaveTaskImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$TaskEventToogleTaskStatusImpl);
   }
 
   @override
@@ -111,27 +127,33 @@ class _$TaskEventSaveTaskImpl implements _TaskEventSaveTask {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() saveTask,
+    required TResult Function() toogleTaskStatus,
+    required TResult Function() updateTitle,
+    required TResult Function() taskSelected,
   }) {
-    return saveTask();
+    return toogleTaskStatus();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? saveTask,
+    TResult? Function()? toogleTaskStatus,
+    TResult? Function()? updateTitle,
+    TResult? Function()? taskSelected,
   }) {
-    return saveTask?.call();
+    return toogleTaskStatus?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? saveTask,
+    TResult Function()? toogleTaskStatus,
+    TResult Function()? updateTitle,
+    TResult Function()? taskSelected,
     required TResult orElse(),
   }) {
-    if (saveTask != null) {
-      return saveTask();
+    if (toogleTaskStatus != null) {
+      return toogleTaskStatus();
     }
     return orElse();
   }
@@ -139,42 +161,275 @@ class _$TaskEventSaveTaskImpl implements _TaskEventSaveTask {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_TaskEventSaveTask value) saveTask,
+    required TResult Function(_TaskEventToogleTaskStatus value)
+        toogleTaskStatus,
+    required TResult Function(_TaskEventUpdateTitle value) updateTitle,
+    required TResult Function(_TaskEventTaskSelected value) taskSelected,
   }) {
-    return saveTask(this);
+    return toogleTaskStatus(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_TaskEventSaveTask value)? saveTask,
+    TResult? Function(_TaskEventToogleTaskStatus value)? toogleTaskStatus,
+    TResult? Function(_TaskEventUpdateTitle value)? updateTitle,
+    TResult? Function(_TaskEventTaskSelected value)? taskSelected,
   }) {
-    return saveTask?.call(this);
+    return toogleTaskStatus?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_TaskEventSaveTask value)? saveTask,
+    TResult Function(_TaskEventToogleTaskStatus value)? toogleTaskStatus,
+    TResult Function(_TaskEventUpdateTitle value)? updateTitle,
+    TResult Function(_TaskEventTaskSelected value)? taskSelected,
     required TResult orElse(),
   }) {
-    if (saveTask != null) {
-      return saveTask(this);
+    if (toogleTaskStatus != null) {
+      return toogleTaskStatus(this);
     }
     return orElse();
   }
 }
 
-abstract class _TaskEventSaveTask implements TaskEvent {
-  const factory _TaskEventSaveTask() = _$TaskEventSaveTaskImpl;
+abstract class _TaskEventToogleTaskStatus implements TaskEvent {
+  const factory _TaskEventToogleTaskStatus() = _$TaskEventToogleTaskStatusImpl;
+}
+
+/// @nodoc
+abstract class _$$TaskEventUpdateTitleImplCopyWith<$Res> {
+  factory _$$TaskEventUpdateTitleImplCopyWith(_$TaskEventUpdateTitleImpl value,
+          $Res Function(_$TaskEventUpdateTitleImpl) then) =
+      __$$TaskEventUpdateTitleImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$TaskEventUpdateTitleImplCopyWithImpl<$Res>
+    extends _$TaskEventCopyWithImpl<$Res, _$TaskEventUpdateTitleImpl>
+    implements _$$TaskEventUpdateTitleImplCopyWith<$Res> {
+  __$$TaskEventUpdateTitleImplCopyWithImpl(_$TaskEventUpdateTitleImpl _value,
+      $Res Function(_$TaskEventUpdateTitleImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TaskEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$TaskEventUpdateTitleImpl implements _TaskEventUpdateTitle {
+  const _$TaskEventUpdateTitleImpl();
+
+  @override
+  String toString() {
+    return 'TaskEvent.updateTitle()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TaskEventUpdateTitleImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() toogleTaskStatus,
+    required TResult Function() updateTitle,
+    required TResult Function() taskSelected,
+  }) {
+    return updateTitle();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? toogleTaskStatus,
+    TResult? Function()? updateTitle,
+    TResult? Function()? taskSelected,
+  }) {
+    return updateTitle?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? toogleTaskStatus,
+    TResult Function()? updateTitle,
+    TResult Function()? taskSelected,
+    required TResult orElse(),
+  }) {
+    if (updateTitle != null) {
+      return updateTitle();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TaskEventToogleTaskStatus value)
+        toogleTaskStatus,
+    required TResult Function(_TaskEventUpdateTitle value) updateTitle,
+    required TResult Function(_TaskEventTaskSelected value) taskSelected,
+  }) {
+    return updateTitle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TaskEventToogleTaskStatus value)? toogleTaskStatus,
+    TResult? Function(_TaskEventUpdateTitle value)? updateTitle,
+    TResult? Function(_TaskEventTaskSelected value)? taskSelected,
+  }) {
+    return updateTitle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TaskEventToogleTaskStatus value)? toogleTaskStatus,
+    TResult Function(_TaskEventUpdateTitle value)? updateTitle,
+    TResult Function(_TaskEventTaskSelected value)? taskSelected,
+    required TResult orElse(),
+  }) {
+    if (updateTitle != null) {
+      return updateTitle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TaskEventUpdateTitle implements TaskEvent {
+  const factory _TaskEventUpdateTitle() = _$TaskEventUpdateTitleImpl;
+}
+
+/// @nodoc
+abstract class _$$TaskEventTaskSelectedImplCopyWith<$Res> {
+  factory _$$TaskEventTaskSelectedImplCopyWith(
+          _$TaskEventTaskSelectedImpl value,
+          $Res Function(_$TaskEventTaskSelectedImpl) then) =
+      __$$TaskEventTaskSelectedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$TaskEventTaskSelectedImplCopyWithImpl<$Res>
+    extends _$TaskEventCopyWithImpl<$Res, _$TaskEventTaskSelectedImpl>
+    implements _$$TaskEventTaskSelectedImplCopyWith<$Res> {
+  __$$TaskEventTaskSelectedImplCopyWithImpl(_$TaskEventTaskSelectedImpl _value,
+      $Res Function(_$TaskEventTaskSelectedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TaskEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$TaskEventTaskSelectedImpl implements _TaskEventTaskSelected {
+  const _$TaskEventTaskSelectedImpl();
+
+  @override
+  String toString() {
+    return 'TaskEvent.taskSelected()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TaskEventTaskSelectedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() toogleTaskStatus,
+    required TResult Function() updateTitle,
+    required TResult Function() taskSelected,
+  }) {
+    return taskSelected();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? toogleTaskStatus,
+    TResult? Function()? updateTitle,
+    TResult? Function()? taskSelected,
+  }) {
+    return taskSelected?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? toogleTaskStatus,
+    TResult Function()? updateTitle,
+    TResult Function()? taskSelected,
+    required TResult orElse(),
+  }) {
+    if (taskSelected != null) {
+      return taskSelected();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TaskEventToogleTaskStatus value)
+        toogleTaskStatus,
+    required TResult Function(_TaskEventUpdateTitle value) updateTitle,
+    required TResult Function(_TaskEventTaskSelected value) taskSelected,
+  }) {
+    return taskSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TaskEventToogleTaskStatus value)? toogleTaskStatus,
+    TResult? Function(_TaskEventUpdateTitle value)? updateTitle,
+    TResult? Function(_TaskEventTaskSelected value)? taskSelected,
+  }) {
+    return taskSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TaskEventToogleTaskStatus value)? toogleTaskStatus,
+    TResult Function(_TaskEventUpdateTitle value)? updateTitle,
+    TResult Function(_TaskEventTaskSelected value)? taskSelected,
+    required TResult orElse(),
+  }) {
+    if (taskSelected != null) {
+      return taskSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TaskEventTaskSelected implements TaskEvent {
+  const factory _TaskEventTaskSelected() = _$TaskEventTaskSelectedImpl;
 }
 
 /// @nodoc
 mixin _$TaskState {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
-  String get body => throw _privateConstructorUsedError;
+  TaskStatus get status => throw _privateConstructorUsedError;
 
   /// Create a copy of TaskState
   /// with the given fields replaced by the non-null parameter values.
@@ -188,7 +443,7 @@ abstract class $TaskStateCopyWith<$Res> {
   factory $TaskStateCopyWith(TaskState value, $Res Function(TaskState) then) =
       _$TaskStateCopyWithImpl<$Res, TaskState>;
   @useResult
-  $Res call({String id, String title, String status, String body});
+  $Res call({String id, String title, TaskStatus status});
 }
 
 /// @nodoc
@@ -209,7 +464,6 @@ class _$TaskStateCopyWithImpl<$Res, $Val extends TaskState>
     Object? id = null,
     Object? title = null,
     Object? status = null,
-    Object? body = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -223,11 +477,7 @@ class _$TaskStateCopyWithImpl<$Res, $Val extends TaskState>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      body: null == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as String,
+              as TaskStatus,
     ) as $Val);
   }
 }
@@ -240,7 +490,7 @@ abstract class _$$TaskStateImplCopyWith<$Res>
       __$$TaskStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, String status, String body});
+  $Res call({String id, String title, TaskStatus status});
 }
 
 /// @nodoc
@@ -259,7 +509,6 @@ class __$$TaskStateImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? status = null,
-    Object? body = null,
   }) {
     return _then(_$TaskStateImpl(
       id: null == id
@@ -273,11 +522,7 @@ class __$$TaskStateImplCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      body: null == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as String,
+              as TaskStatus,
     ));
   }
 }
@@ -286,7 +531,7 @@ class __$$TaskStateImplCopyWithImpl<$Res>
 
 class _$TaskStateImpl implements _TaskState {
   const _$TaskStateImpl(
-      {this.id = '', this.title = '', this.status = '', this.body = ''});
+      {this.id = '', this.title = '', this.status = TaskStatus.pending});
 
   @override
   @JsonKey()
@@ -296,14 +541,11 @@ class _$TaskStateImpl implements _TaskState {
   final String title;
   @override
   @JsonKey()
-  final String status;
-  @override
-  @JsonKey()
-  final String body;
+  final TaskStatus status;
 
   @override
   String toString() {
-    return 'TaskState(id: $id, title: $title, status: $status, body: $body)';
+    return 'TaskState(id: $id, title: $title, status: $status)';
   }
 
   @override
@@ -313,12 +555,11 @@ class _$TaskStateImpl implements _TaskState {
             other is _$TaskStateImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.body, body) || other.body == body));
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, status, body);
+  int get hashCode => Object.hash(runtimeType, id, title, status);
 
   /// Create a copy of TaskState
   /// with the given fields replaced by the non-null parameter values.
@@ -333,17 +574,14 @@ abstract class _TaskState implements TaskState {
   const factory _TaskState(
       {final String id,
       final String title,
-      final String status,
-      final String body}) = _$TaskStateImpl;
+      final TaskStatus status}) = _$TaskStateImpl;
 
   @override
   String get id;
   @override
   String get title;
   @override
-  String get status;
-  @override
-  String get body;
+  TaskStatus get status;
 
   /// Create a copy of TaskState
   /// with the given fields replaced by the non-null parameter values.

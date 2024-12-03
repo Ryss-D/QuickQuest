@@ -17,12 +17,10 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Task {
   @HiveField(0)
-  String get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @HiveField(1)
   String get title => throw _privateConstructorUsedError;
   @HiveField(2)
-  String get body => throw _privateConstructorUsedError;
-  @HiveField(3)
   TaskStatus get status => throw _privateConstructorUsedError;
 
   /// Create a copy of Task
@@ -37,10 +35,9 @@ abstract class $TaskCopyWith<$Res> {
       _$TaskCopyWithImpl<$Res, Task>;
   @useResult
   $Res call(
-      {@HiveField(0) String id,
+      {@HiveField(0) int? id,
       @HiveField(1) String title,
-      @HiveField(2) String body,
-      @HiveField(3) TaskStatus status});
+      @HiveField(2) TaskStatus status});
 }
 
 /// @nodoc
@@ -58,23 +55,18 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? title = null,
-    Object? body = null,
     Object? status = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      body: null == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
           ? _value.status
@@ -92,10 +84,9 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@HiveField(0) String id,
+      {@HiveField(0) int? id,
       @HiveField(1) String title,
-      @HiveField(2) String body,
-      @HiveField(3) TaskStatus status});
+      @HiveField(2) TaskStatus status});
 }
 
 /// @nodoc
@@ -110,23 +101,18 @@ class __$$TaskImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? title = null,
-    Object? body = null,
     Object? status = null,
   }) {
     return _then(_$TaskImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      body: null == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
           ? _value.status
@@ -140,15 +126,14 @@ class __$$TaskImplCopyWithImpl<$Res>
 
 class _$TaskImpl implements _Task {
   const _$TaskImpl(
-      {@HiveField(0) this.id = '',
+      {@HiveField(0) this.id = null,
       @HiveField(1) this.title = '',
-      @HiveField(2) this.body = '',
-      @HiveField(3) this.status = TaskStatus.pending});
+      @HiveField(2) this.status = TaskStatus.pending});
 
   @override
   @JsonKey()
   @HiveField(0)
-  final String id;
+  final int? id;
   @override
   @JsonKey()
   @HiveField(1)
@@ -156,15 +141,11 @@ class _$TaskImpl implements _Task {
   @override
   @JsonKey()
   @HiveField(2)
-  final String body;
-  @override
-  @JsonKey()
-  @HiveField(3)
   final TaskStatus status;
 
   @override
   String toString() {
-    return 'Task(id: $id, title: $title, body: $body, status: $status)';
+    return 'Task(id: $id, title: $title, status: $status)';
   }
 
   @override
@@ -174,12 +155,11 @@ class _$TaskImpl implements _Task {
             other is _$TaskImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.body, body) || other.body == body) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, body, status);
+  int get hashCode => Object.hash(runtimeType, id, title, status);
 
   /// Create a copy of Task
   /// with the given fields replaced by the non-null parameter values.
@@ -192,22 +172,18 @@ class _$TaskImpl implements _Task {
 
 abstract class _Task implements Task {
   const factory _Task(
-      {@HiveField(0) final String id,
+      {@HiveField(0) final int? id,
       @HiveField(1) final String title,
-      @HiveField(2) final String body,
-      @HiveField(3) final TaskStatus status}) = _$TaskImpl;
+      @HiveField(2) final TaskStatus status}) = _$TaskImpl;
 
   @override
   @HiveField(0)
-  String get id;
+  int? get id;
   @override
   @HiveField(1)
   String get title;
   @override
   @HiveField(2)
-  String get body;
-  @override
-  @HiveField(3)
   TaskStatus get status;
 
   /// Create a copy of Task
