@@ -7,11 +7,24 @@ class TasksListRepository {
   final dataSource = TasksListHiveDatasource();
 
   Future<List<Task>> getAllTasks() async {
-    return await dataSource.getAllTasks();
+    final iterator = await dataSource.getAllTasks();
+   return  iterator.map<Task>((value) {
+      return Task(
+          id: value.$1, title: value.$2.title, status: value.$2.status);
+    } 
+    ).toList();
   }
 
+  //Method refactored to use local object instead of re-read the db
   Future<List<Task>> getTasksByStatus(TaskStatus status) async {
-    final tasks = await dataSource.getAllTasks();
+    final iterator = await dataSource.getAllTasks();
+   //refactor to avoid code duplication
+   final tasks = iterator.map<Task>((value) {
+      return Task(
+          id: value.$1, title: value.$2.title, status: value.$2.status);
+    } 
+    ).toList();
+
     return tasks.where((element) => element.status == status).toList();
   }
 
@@ -21,6 +34,10 @@ class TasksListRepository {
 
   Future<void> deleteTask(Task task) async {
     await dataSource.deleteTask(task.id!);
+  }
+
+  Future<void> deleteAll() async {
+    await dataSource.deleteAll();
   }
 
   Future<void> updateTask(Task task) async {

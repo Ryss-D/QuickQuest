@@ -1,11 +1,13 @@
 import 'package:hive/hive.dart';
 
 @HiveType(typeId:2)
-enum TaskStatus {
+enum TaskStatus  {
   @HiveField(0)
   done,
   @HiveField(1)
   pending,
+  @HiveField(2)
+  all,
 }
 
 extension TaskStatusExtension on TaskStatus {

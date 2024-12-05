@@ -4,6 +4,7 @@
     "invalidNavigation" : "Invalid Route",
     "completedTasks" : "Completed tasks",
     "newTask" : "New task",
-    "youHaveCompleteEverything" : "You have complete everything",
+    "youHaveCompleteEverything" : "Let's create your first task",
+    "youDontHaveTaskOfSelectedType" : "You don't have tasks of the selected type",
     "saveTask" : "Save Task"
 }

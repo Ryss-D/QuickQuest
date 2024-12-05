@@ -7,7 +7,9 @@ class TasksInteractions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(children: [
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
       TaskTypeSelector(),
       NewTaskButton()
     ],);

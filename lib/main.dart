@@ -5,6 +5,7 @@ import 'package:quick_quest/dependencies.dart';
 
 void main() async{
   await setUpDependencies();
+
   runApp(const QuickQuestApp());
 }
 

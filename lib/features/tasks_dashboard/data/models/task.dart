@@ -10,7 +10,7 @@ part 'task.g.dart';
 class Task with _$Task {
   const factory Task({
     @HiveField(0) @Default(null) int? id,
-    @HiveField(1) @Default('') String title,
+    @HiveField(1) @Default("No title") String title,
     @HiveField(2) @Default(TaskStatus.pending) TaskStatus status,
   }) = _Task;
 }

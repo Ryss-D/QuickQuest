@@ -14,6 +14,7 @@ class TasksListBloc extends Bloc<TasksListEvent, TasksListState> {
     on<_TasksListEventFilterTasks>(_onFilterTasks);
     on<_TasksListEventAddTask>(_onAddTask);
     on<_TasksListEventRemoveTask>(_onRemoveTask);
+    on<_TasksListEventRemoveAll>(_onRemoveAll);
     on<_TasksListEventUpdateTask>(_onUpdateTask);
   }
 
@@ -26,15 +27,24 @@ class TasksListBloc extends Bloc<TasksListEvent, TasksListState> {
       state.copyWith(tasks: tasks),
     );
   }
+
   void _onFilterTasks(
       _TasksListEventFilterTasks event, Emitter<TasksListState> emit) async {
-    final tasks = await tasksListRepository.getTasksByStatus(event.status);
-    emit(
-      state.copyWith(tasks: tasks),
-    );
+    final tasks = await tasksListRepository.getAllTasks();
+    late List<Task> filteredTasks;
+    if(event.status != TaskStatus.all){
+    filteredTasks = tasks.where((element) => element.status == event.status).toList();
+    }else{
+      filteredTasks = tasks;
+    }
+
+    if (event.status != null) {
+      emit(
+        state.copyWith(tasks: filteredTasks, filter: event.status!),
+      );
+    }
   }
 
-//TODO: Consider optimistic UI to avoid refetching tasks every operation
   void _onAddTask(
       _TasksListEventAddTask event, Emitter<TasksListState> emit) async {
     await tasksListRepository.addTask(Task(title: event.title));
@@ -44,6 +54,12 @@ class TasksListBloc extends Bloc<TasksListEvent, TasksListState> {
   void _onRemoveTask(
       _TasksListEventRemoveTask event, Emitter<TasksListState> emit) async {
     await tasksListRepository.deleteTask(event.task);
+    add(const TasksListEvent.loadTasks());
+  }
+
+  void _onRemoveAll(
+      _TasksListEventRemoveAll event, Emitter<TasksListState> emit) async {
+    await tasksListRepository.deleteAll();
     add(const TasksListEvent.loadTasks());
   }
 

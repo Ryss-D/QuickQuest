@@ -127,7 +127,7 @@ class __$$TaskImplCopyWithImpl<$Res>
 class _$TaskImpl implements _Task {
   const _$TaskImpl(
       {@HiveField(0) this.id = null,
-      @HiveField(1) this.title = '',
+      @HiveField(1) this.title = "No title",
       @HiveField(2) this.status = TaskStatus.pending});
 
   @override

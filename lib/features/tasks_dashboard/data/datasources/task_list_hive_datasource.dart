@@ -6,9 +6,10 @@ class TasksListHiveDatasource{
 
   Future<Box<Task>> get _box async => await Hive.openBox<Task>(_boxName);
 
-  Future<List<Task>> getAllTasks() async {
+  Future<Iterable<(int,Task)>> getAllTasks() async {
+
     var box = await _box;
-    return box.values.toList();
+    return box.values.indexed;
   }
 
   Future<void> addTask(Task task) async {
@@ -19,6 +20,10 @@ class TasksListHiveDatasource{
   Future<void> deleteTask(int index) async {
     var box = await _box;
     await box.deleteAt(index);
+  }
+  Future<void> deleteAll() async {
+    var box = await _box;
+    await box.deleteFromDisk();
   }
 
   Future<void> updateTask(int index, Task task) async {
